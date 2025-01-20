@@ -1,5 +1,5 @@
 "use client";
-import useSWR from "swr";
+import UseSWR from "swr";
 import Logo from "@/components/ui/Logo";
 import { OrderwithProducts } from "@/src/types";
 import LatestOrderItem from "@/components/order/LatestOrderItem";
@@ -11,7 +11,7 @@ function page() {
       .then((res) => res.json())
       .then((data) => data);
 
-  const { data, error, isLoading } = useSWR<OrderwithProducts[]>(url, fetcher, {
+  const { data, error, isLoading } = UseSWR<OrderwithProducts[]>(url, fetcher, {
     refreshInterval: 60000,
     revalidateOnFocus: false,
   });
