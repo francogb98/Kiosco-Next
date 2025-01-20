@@ -16,7 +16,7 @@ function ImageUpload({ image }: { image: string | undefined }) {
 
           if (result.event === "success") {
             widget.close();
-            // @ts-ignore
+            // @ts-expect-error ts no toma el tipo
             setImageUrl(result.info.secure_url);
           }
         }}
